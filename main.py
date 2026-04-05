@@ -17,6 +17,8 @@ def main():
     pygame.time.Clock()
     dt = 0
 
+
+
     asteroids = pygame.sprite.Group()
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
@@ -26,11 +28,9 @@ def main():
     AsteroidField.containers = updatable
 
     AsteroidField()
-
+    Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     while True:
         log_state()
-        player_info = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
-        # player_info.update(dt)
         updatable.update(dt)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
