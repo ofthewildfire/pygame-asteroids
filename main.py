@@ -18,7 +18,7 @@ def main():
     while True:
         log_state()
         player_info = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
-
+        player_info.update(dt)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
