@@ -10,10 +10,6 @@ class Player(circleshape.CircleShape):
         self.rotation = 0
         # in the Player class
 
-    # my_group = pygame.sprite.Group()
-
-
-
     def triangle(self):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
         right = pygame.Vector2(0, 1).rotate(self.rotation + 90) * self.radius / 1.5
