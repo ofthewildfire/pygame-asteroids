@@ -15,6 +15,12 @@ def main():
     pygame.time.Clock()
     dt = 0
 
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+    # Player is the name of the class, not an instance of it
+    # This must be done before any Player objects are created
+    Player.containers = (updatable, drawable)
+
     while True:
         log_state()
         player_info = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
