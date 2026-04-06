@@ -35,7 +35,8 @@ def main():
         updatable.update(dt)
 
         for a in asteroids:
-            if a.collides_with()
+            if a.collides_with():
+                pass
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
