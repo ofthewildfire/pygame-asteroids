@@ -8,6 +8,7 @@ from asteroid import Asteroid
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 from logger import log_state
 from player import Player
+from logger import log_event
 
 
 def main():
@@ -32,6 +33,10 @@ def main():
     while True:
         log_state()
         updatable.update(dt)
+
+        for a in asteroids:
+            if a.collides_with()
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return

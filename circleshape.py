@@ -27,6 +27,7 @@ class CircleShape(pygame.sprite.Sprite):
        r2 = other.radius
 
 
+       # this isn't working .... distance thing is all wrong.
        if self.position.distance_to(r1 + r2) <= other.position.distance_to(r1 + r2):
            return True
        else:

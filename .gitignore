@@ -12,3 +12,4 @@ wheels/
 
 # Boot.dev related items
 game_state.jsonl
+game_events.jsonl
