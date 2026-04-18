@@ -1,4 +1,8 @@
+import sys
+
 import pygame
+
+from logger import log_event
 
 
 # Base class for game objects
@@ -25,12 +29,12 @@ class CircleShape(pygame.sprite.Sprite):
     def collides_with(self, other):
        r1 = self.radius
        r2 = other.radius
-
-
-       # this isn't working .... distance thing is all wrong.
-       if self.position.distance_to(r1 + r2) <= other.position.distance_to(r1 + r2):
+       distance = self.position.distance_to(other.position)
+       if r1 + r2 >= distance:
            return True
        else:
-           return  False
+           return False
+
+
 
 
