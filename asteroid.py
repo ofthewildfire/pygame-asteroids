@@ -22,7 +22,7 @@ class Asteroid(circleshape.CircleShape):
     def split(self):
         self.kill()
 
-        if ASTEROID_MIN_RADIUS <= self.radius:
+        if self.radius <= ASTEROID_MIN_RADIUS:
             return
         else:
             log_event('asteroid_split')
@@ -30,5 +30,7 @@ class Asteroid(circleshape.CircleShape):
             # Because it takes an ANGLE. use the angle we generated.
             first_movement = self.velocity.rotate(angle)
             second_movement = self.velocity.rotate(-angle)
-
+            smaller_asteroid_radius = self.radius - ASTEROID_MIN_RADIUS
+            Asteroid(self.position.x, self.position.y, smaller_asteroid_radius).velocity = first_movement * 1.2
+            Asteroid(self.position.x, self.position.y, smaller_asteroid_radius).velocity = second_movement * 1.2
 

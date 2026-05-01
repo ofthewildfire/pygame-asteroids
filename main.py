@@ -51,7 +51,8 @@ def main():
             for shot in shots:
                 if shot.collides_with(a):
                     log_event('asteroid_shot')
-                    a.kill()
+                    # a.kill()
+                    a.split()
                     shot.kill()
 
         for event in pygame.event.get():
